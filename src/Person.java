@@ -8,6 +8,10 @@ abstract class Person {
         this.name = name;
     }
 
+    public Person(String id) {
+        this.id = id;
+    }
+
     public abstract String toString();
 
     public String getName() {
