@@ -9,8 +9,8 @@ Team:
 
 ## Funcionalidades Básicas
 
-- ●	Manter um cadastro de informações dos produtos (código do produto, nome do produto, preço, quantidade em estoque, categoria)
-- ●	Manter um cadastro de informações dos clientes (código do produto, nome do produto, preço, quantidade em estoque, categoria)
-- ●	Manter uma série de informações entre produtos, como preços e categorias.
-- ●	Ser capaz de comparar preços entre produtos da mesma categoria 
-- ●	O usuário da aplicação deve ser capaz registrar e realizar a comparação.
+- Manter um cadastro de informações dos produtos (código do produto, nome do produto, preço, quantidade em estoque, categoria)
+- Manter um cadastro de informações dos clientes (código do produto, nome do produto, preço, quantidade em estoque, categoria)
+- Manter uma série de informações entre produtos, como preços e categorias.
+- Ser capaz de comparar preços entre produtos da mesma categoria 
+- O usuário da aplicação deve ser capaz registrar e realizar a comparação.
