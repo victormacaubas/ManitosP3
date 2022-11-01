@@ -9,6 +9,10 @@ public class Product implements Comparable<Product> {
         this.name = name;
     }
 
+    public Product(String id) {
+        this.id = id;
+    }
+
     public String toString() {
 
         return "(Product id: " + this.id + ") " + "(Product name: " + this.name + ") " + "(Price: " + this.price + ") " + "(In stock: " + this.productStock + ")";
