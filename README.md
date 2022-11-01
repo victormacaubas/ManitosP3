@@ -1,16 +1,18 @@
-## Projeto: E-commerce ManitosStore.com
+## Getting Started
 
-Team:
+Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
 
-- Danilo Souza - Engenheiro das listas encadeadas e métodos
-- Milena Barros - Engenheira das listas encadeadas e métodos 
-- Luis Gustavo - Engenheiro das listas encadeadas e métodos 
-- Victor Macaúbas - Coordenador geral e controle de versões  
+## Folder Structure
 
-## Funcionalidades Básicas
+The workspace contains two folders by default, where:
 
-- ●	Manter um cadastro de informações dos produtos (código do produto, nome do produto, preço, quantidade em estoque, categoria)
-- ●	Manter um cadastro de informações dos clientes (código do produto, nome do produto, preço, quantidade em estoque, categoria)
-- ●	Manter uma série de informações entre produtos, como preços e categorias.
-- ●	Ser capaz de comparar preços entre produtos da mesma categoria 
-- ●	O usuário da aplicação deve ser capaz registrar e realizar a comparação.
+- `src`: the folder to maintain sources
+- `lib`: the folder to maintain dependencies
+
+Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+
+> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+
+## Dependency Management
+
+The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
