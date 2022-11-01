@@ -1,4 +1,4 @@
-public class Client extends Person {
+public class Client extends Person implements Comparable<Client>{
 
     private String password;
 
@@ -23,5 +23,13 @@ public class Client extends Person {
     public String toString() {
         return "Client ID: " + this.getId() + "Username: " + this.getName();
     }
-    
+
+    @Override
+    public int compareTo(Client data) {
+        int result;
+
+        result = this.getId().compareToIgnoreCase(data.getId());
+
+        return result;
+    }
 }
