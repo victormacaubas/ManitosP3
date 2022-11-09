@@ -8,4 +8,23 @@ public class Queue<T> {
     public Queue(int size) {
         this.size = size;
     }
+
+    public boolean isEmpty() {
+
+        if (this.nodeCount == 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean isFull() {
+
+        if (this.nodeCount == size) {
+            return true;
+        }
+
+        return false;
+
+    }
 }
