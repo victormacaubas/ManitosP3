@@ -56,5 +56,17 @@ public class Queue<T> {
             this.nodeCount--;
             return aux.getInfo();
         }
+        
+    this.first = this.first.getNext();
+        this.nodeCount--;
 
+        return aux.getInfo();
+
+    }
+
+    public T head() {
+
+        return this.first.getInfo();
+
+    }
 }
