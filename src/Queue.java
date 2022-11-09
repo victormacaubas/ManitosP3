@@ -43,6 +43,18 @@ public class Queue<T> {
             nodeCount++;
 
         }
-
     }
+
+    public T deQueue() {
+
+        DoublyNode<T> aux = this.first;
+
+        if (this.first.getNext() == null) {
+
+            this.first = null;
+            this.last = null;
+            this.nodeCount--;
+            return aux.getInfo();
+        }
+
 }
