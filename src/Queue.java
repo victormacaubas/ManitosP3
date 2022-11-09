@@ -25,6 +25,24 @@ public class Queue<T> {
         }
 
         return false;
+    }
+
+    public void enQueue(T data) {
+
+        DoublyNode<T> newNode = new DoublyNode<>(data);
+
+        if (this.isEmpty()) {
+            this.first = newNode;
+            this.last = newNode;
+            this.nodeCount++;
+
+        } else {
+
+            this.last.setNext(newNode);
+            this.last = newNode;
+            nodeCount++;
+
+        }
 
     }
 }
