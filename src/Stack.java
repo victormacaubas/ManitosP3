@@ -1,4 +1,4 @@
-public class Stack<T> {
+public class Stack<T extends Comparable<T>> {
 
     private DoublyNode<T> top;
 

@@ -1,4 +1,4 @@
-public class Queue<T> {
+public class Queue<T extends Comparable<T>> {
 
     private DoublyNode<T> first;
     private DoublyNode<T> last;
