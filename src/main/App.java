@@ -1,7 +1,12 @@
+package main;
 import java.util.Scanner;
-import bases
 import Exceptions.ProductListException;
 import Exceptions.QueueException;
+import interfaces.Client;
+import interfaces.ClienteDataBase;
+import interfaces.OrderQueue;
+import interfaces.Product;
+import interfaces.ProductList;
 
 public class App {
 
