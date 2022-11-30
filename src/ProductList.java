@@ -1,8 +1,10 @@
-public class ProdutList {
+import Exceptions.ProductListException;
+
+public class ProductList {
 
     private DoublyLinkedList<Product> productStock;
 
-    public ProdutList() {
+    public ProductList() {
 
         this.productStock = new DoublyLinkedList<>();
     }
@@ -78,6 +80,21 @@ public class ProdutList {
 
             System.out.println("Produt not found");
         }
+
+    }
+
+    public Product getProduct(String id) throws ProductListException {
+
+        Product aux = new Product(id);
+        DoublyNode<Product> result = this.productStock.search(aux);
+
+        if (result == null) {
+
+            throw new ProductListException("Product not found");
+
+        }
+
+        return result.getInfo();
 
     }
 
