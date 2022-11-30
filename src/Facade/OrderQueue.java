@@ -29,21 +29,6 @@ public class OrderQueue {
        return this.productOrder.getNodeCount();
     }
 
-    /* 
-    public void processProduct() throws QueueException {
-
-        Product data;
-
-        if (productOrder.isEmpty()) {
-            
-            throw new QueueException("No orders to process");
-            
-        }
-
-        data = productOrder.deQueue();
-        System.out.println("Product: " + data + " Processed");
-    }*/
-
     public double calculateTotal() throws QueueException {
 
         if (productOrder.isEmpty()) {
@@ -54,7 +39,7 @@ public class OrderQueue {
 
         double sum = 0;
 
-        for (int i = 0; i < this.productOrder.getNodeCount(); i++) {
+        for (int i = 0; i < this.productOrder.getNodeCount() + 1; i++) {
             
             sum += this.productOrder.deQueue().getPrice();
         }

@@ -6,6 +6,7 @@ import Facade.ClienteDataBase;
 import Facade.OrderQueue;
 import Facade.ProductList;
 import Strategy.CreditCardStrategy;
+import Strategy.PayPalStrategy;
 import interfaces.Client;
 import interfaces.Product;
 
@@ -24,7 +25,7 @@ public class App {
         System.out.println("8 - Remove Product by id");
         System.out.println("9 - Add to cart");
         System.out.println("10 - Process shopping cart");
-        System.out.println("11 - Paymento mehtod");
+        System.out.println("11 - Pay with PayPal");
         System.out.println("0 - Close application");
         System.out.println("Choose an option");
 
@@ -178,6 +179,25 @@ public class App {
                 try {
 
                     shoppingCart.pay(new CreditCardStrategy(tempClient.getName(), cardnumber, cvv, dateExp));
+                    
+                } catch (QueueException e) {
+
+                    System.out.println(e.getMessage());
+                }
+
+            }
+
+            if (operator == 11) {
+
+                System.out.println("email");
+                String email = input.nextLine();
+
+                System.out.println("input cvv");
+                String passwordPay = input.nextLine();
+
+                try {
+
+                    shoppingCart.pay(new PayPalStrategy(email, passwordPay));
                     
                 } catch (QueueException e) {
 
