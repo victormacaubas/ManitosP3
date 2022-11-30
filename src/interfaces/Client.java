@@ -15,6 +15,7 @@ public class Client extends Person implements Comparable<Client> {
 
     public Client(String id, String name, String password) {
         super(id, name);
+        this.password = password;
     }
 
     public Client(String id) {

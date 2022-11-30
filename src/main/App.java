@@ -94,6 +94,7 @@ public class App {
                 System.out.println("Please inform produt name:");
                 String productName = input.nextLine();
 
+
                 System.out.println("Please set a price");
                 double productPrice = input.nextDouble();
 
