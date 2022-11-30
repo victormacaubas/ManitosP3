@@ -2,11 +2,12 @@ package main;
 import java.util.Scanner;
 import Exceptions.ProductListException;
 import Exceptions.QueueException;
+import Facade.ClienteDataBase;
+import Facade.OrderQueue;
+import Facade.ProductList;
+import Strategy.CreditCardStrategy;
 import interfaces.Client;
-import interfaces.ClienteDataBase;
-import interfaces.OrderQueue;
 import interfaces.Product;
-import interfaces.ProductList;
 
 public class App {
 
@@ -14,7 +15,7 @@ public class App {
 
         System.out.println("Settings:");
         System.out.println("1 - Register new client Account");
-        System.out.println("2 - Verify client password");
+        System.out.println("2 - Log in client");
         System.out.println("3 - Register new product");
         System.out.println("4 - View Product data by id");
         System.out.println("5 - View produt database");
@@ -23,6 +24,7 @@ public class App {
         System.out.println("8 - Remove Product by id");
         System.out.println("9 - Add to cart");
         System.out.println("10 - Process shopping cart");
+        System.out.println("11 - Paymento mehtod");
         System.out.println("0 - Close application");
         System.out.println("Choose an option");
 
@@ -35,6 +37,7 @@ public class App {
         String id;
         String name;
         String password;
+        Client tempClient = null;
         ProductList productDataBase = new ProductList();
         OrderQueue shoppingCart = new OrderQueue();
         ClienteDataBase clientAccounts = new ClienteDataBase();
@@ -57,8 +60,9 @@ public class App {
                 System.out.println("Please inform client password: ");
                 password = input.nextLine();
 
-                Client tempClient = new Client(id, name, password);
+                tempClient = new Client(id, name, password);
                 clientAccounts.registerClient(tempClient);
+                
 
             }
 
@@ -73,6 +77,7 @@ public class App {
                 if (clientAccounts.passwordCheck(id, password)) {
 
                     System.out.println("Passowrd verified");
+                    tempClient = clientAccounts.getClient(id);
 
                 } else {
 
@@ -160,15 +165,18 @@ public class App {
 
             if (operator == 10) {
 
-                System.out.println("Processing order...");
+                System.out.println("input card number");
+                String cardnumber = input.nextLine();
+
+                System.out.println("input cvv");
+                String cvv = input.nextLine();
+
+                System.out.println("input expiration date");
+                String dateExp = input.nextLine();
 
                 try {
 
-                    for (int i = 0; i < shoppingCart.orderSize(); i++) {
-
-                        shoppingCart.processProduct();
-
-                    }
+                    shoppingCart.pay(new CreditCardStrategy(tempClient.getName(), cardnumber, cvv, dateExp));
                     
                 } catch (QueueException e) {
 

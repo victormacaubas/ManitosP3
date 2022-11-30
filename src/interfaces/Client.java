@@ -1,5 +1,6 @@
 package interfaces;
-public class Client extends Person implements Comparable<Client>{
+
+public class Client extends Person implements Comparable<Client> {
 
     private String password;
 
@@ -13,7 +14,7 @@ public class Client extends Person implements Comparable<Client>{
     }
 
     public Client(String id, String name, String password) {
-        super(id,name);
+        super(id, name);
     }
 
     public Client(String id) {
@@ -24,8 +25,7 @@ public class Client extends Person implements Comparable<Client>{
         this.password = data;
     }
 
-
-        public String getPassword() {
+    public String getPassword() {
         return password;
     }
 
@@ -42,6 +42,5 @@ public class Client extends Person implements Comparable<Client>{
 
         return result;
     }
-
 
 }
