@@ -193,7 +193,7 @@ public class App {
                 System.out.println("email");
                 String email = input.nextLine();
 
-                System.out.println("input cvv");
+                System.out.println("input PayPal password");
                 String passwordPay = input.nextLine();
 
                 try {
