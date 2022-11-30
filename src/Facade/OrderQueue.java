@@ -18,7 +18,7 @@ public class OrderQueue {
         
         if (productOrder.isFull()) {
 
-            throw new QueueException("Queue is full at the moment");
+            throw new QueueException("ERROR: Queue is full at the moment\n");
 
         }
 
@@ -33,7 +33,7 @@ public class OrderQueue {
 
         if (productOrder.isEmpty()) {
             
-            throw new QueueException("No orders to process");
+            throw new QueueException("ERROR: No orders to process\n");
             
         }
 

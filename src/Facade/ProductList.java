@@ -47,7 +47,7 @@ public class ProductList {
 
         } else {
 
-            System.out.println("Produt not found");
+            System.out.println("Produt not found\n");
         }
 
     }
@@ -60,11 +60,11 @@ public class ProductList {
         if (result != null) {
 
             result.getInfo().setPrice(price);
-            System.out.println("Price updated");
+            System.out.println("Price updated\n");
 
         } else {
 
-            System.out.println("Produt not found");
+            System.out.println("Produt not found\n");
         }
     }
 
@@ -80,7 +80,7 @@ public class ProductList {
 
         } else {
 
-            System.out.println("Produt not found");
+            System.out.println("Produt not found\n");
         }
 
     }
@@ -94,8 +94,13 @@ public class ProductList {
 
         if (result == null) {
 
-            throw new ProductListException("Product not found");
+            throw new ProductListException("ERROR: Product not found\n");
 
+        }
+
+        if (result != null && result.getInfo().getProductStock() == 0) {
+            
+            throw new ProductListException("ERROR: Product out of stock");
         }
 
         result.getInfo().attStock();

@@ -14,6 +14,7 @@ public class App {
 
     public static void showMenu() {
 
+        System.out.println(" ");
         System.out.println("Settings:");
         System.out.println("1 - Register new client Account");
         System.out.println("2 - Log in client");

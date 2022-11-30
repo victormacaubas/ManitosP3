@@ -48,7 +48,7 @@ public class ClienteDataBase {
 
         } else {
 
-            System.out.println("Client not found");
+            System.out.println("Client not found\n");
         }
     }
 
@@ -60,11 +60,11 @@ public class ClienteDataBase {
         if (result != null) {
 
             result.getInfo().setPassword(password);
-            System.out.println("New password stored");
+            System.out.println("New password stored\n");
 
         } else {
 
-            System.out.println("Client not found");
+            System.out.println("Client not found\n");
         }
 
     }
