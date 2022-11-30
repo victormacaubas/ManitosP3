@@ -1,3 +1,6 @@
+import ADT.DoublyLinkedList;
+import ADT.DoublyNode;
+
 public class ClienteDataBase {
 
     private DoublyLinkedList<Client> clientData;

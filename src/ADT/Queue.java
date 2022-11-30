@@ -1,3 +1,4 @@
+package ADT;
 public class Queue<T extends Comparable<T>> {
 
     private DoublyNode<T> first;
@@ -25,6 +26,10 @@ public class Queue<T extends Comparable<T>> {
         }
 
         return false;
+    }
+
+    public int getNodeCount() {
+        return this.nodeCount;
     }
 
     public void enQueue(T data) {
@@ -56,8 +61,8 @@ public class Queue<T extends Comparable<T>> {
             this.nodeCount--;
             return aux.getInfo();
         }
-        
-    this.first = this.first.getNext();
+
+        this.first = this.first.getNext();
         this.nodeCount--;
 
         return aux.getInfo();

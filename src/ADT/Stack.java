@@ -1,3 +1,5 @@
+package ADT;
+
 public class Stack<T extends Comparable<T>> {
 
     private DoublyNode<T> top;

@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import bases
 import Exceptions.ProductListException;
 import Exceptions.QueueException;
 
@@ -137,7 +137,6 @@ public class App {
                 System.out.println("Input product id");
                 String productId = input.nextLine();
                 Product tempProduct;
-                Product checkProduct;
 
                 try {
 
@@ -167,7 +166,7 @@ public class App {
                     }
                     
                 } catch (QueueException e) {
-                    
+
                     System.out.println(e.getMessage());
                 }
 

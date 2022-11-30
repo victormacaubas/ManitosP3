@@ -1,3 +1,4 @@
+package ADT;
 public class DoublyNode<T extends Comparable<T>> {
 
     private DoublyNode<T> prev;

@@ -1,3 +1,5 @@
+import ADT.DoublyLinkedList;
+import ADT.DoublyNode;
 import Exceptions.ProductListException;
 
 public class ProductList {
