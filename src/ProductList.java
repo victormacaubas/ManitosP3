@@ -12,7 +12,6 @@ public class ProductList {
     public void registerProduct(Product data) {
 
         DoublyNode<Product> result = this.productStock.search(data);
-        int productCounter;
 
         if (result == null) {
 
@@ -22,8 +21,7 @@ public class ProductList {
 
         } else {
 
-            productCounter = result.getInfo().getProductStock();
-            result.getInfo().setProductStock(productCounter + 1);
+            result.getInfo().addStock();
         }
 
     }
@@ -85,8 +83,10 @@ public class ProductList {
 
     public Product getProduct(String id) throws ProductListException {
 
+        Product checkOut;
         Product aux = new Product(id);
         DoublyNode<Product> result = this.productStock.search(aux);
+        
 
         if (result == null) {
 
@@ -94,7 +94,12 @@ public class ProductList {
 
         }
 
-        return result.getInfo();
+        result.getInfo().attStock();
+
+        checkOut = new Product(result.getInfo().getId(), result.getInfo().getName());
+        checkOut.setPrice(result.getInfo().getPrice());
+
+        return checkOut;
 
     }
 

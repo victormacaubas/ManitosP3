@@ -1,38 +1,42 @@
-import Exceptions.QueueExpection;
+import Exceptions.QueueException;
 
 public class OrderQueue {
 
-    private Queue<Product> ProductOrder;
+    private Queue<Product> productOrder;
 
     public OrderQueue() {
 
-        ProductOrder = new Queue<>(20);
+        productOrder = new Queue<>(20);
 
     }
 
-    public void insertProduct(Product data) throws QueueExpection {
+    public void insertProduct(Product data) throws QueueException {
         
-        if (ProductOrder.isFull()) {
+        if (productOrder.isFull()) {
 
-            throw new QueueExpection("Queue is full at the moment");
+            throw new QueueException("Queue is full at the moment");
 
         }
 
-        ProductOrder.enQueue(data);
+        productOrder.enQueue(data);
     }
 
-    public void processProduct() throws QueueExpection {
+    public int orderSize() {
+       return this.productOrder.getNodeCount();
+    }
+
+    public void processProduct() throws QueueException {
 
         Product data;
 
-        if (ProductOrder.isEmpty()) {
+        if (productOrder.isEmpty()) {
             
-            throw new QueueExpection("No orders to process");
+            throw new QueueException("No orders to process");
             
         }
 
-        data = ProductOrder.deQueue();
-        System.out.println("Product: " + data + " On call");
+        data = productOrder.deQueue();
+        System.out.println("Product: " + data + " Processed");
     }
 
 

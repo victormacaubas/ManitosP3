@@ -15,7 +15,8 @@ public class Product implements Comparable<Product> {
 
     public String toString() {
 
-        return "(Product id: " + this.id + ") " + "(Product name: " + this.name + ") " + "(Price: " + this.price + ") " + "(In stock: " + this.productStock + ")";
+        return "(Product id: " + this.id + ") " + "(Product name: " + this.name + ") " + "(Price: " + this.price + ") "
+                + "(In stock: " + this.productStock + ")";
 
     }
 
@@ -35,6 +36,22 @@ public class Product implements Comparable<Product> {
         this.productStock = productStock;
     }
 
+    public double getPrice() {
+        return this.price;
+    }
+
+    public int getProductStock() {
+        return this.productStock;
+    }
+
+    public void attStock() {
+        this.productStock--;
+    }
+
+    public void addStock() {
+        this.productStock++;
+    }
+
     @Override
     public int compareTo(Product ProductData) {
         int result;
@@ -43,4 +60,5 @@ public class Product implements Comparable<Product> {
 
         return result;
     }
+
 }

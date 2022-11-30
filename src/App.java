@@ -137,6 +137,7 @@ public class App {
                 System.out.println("Input product id");
                 String productId = input.nextLine();
                 Product tempProduct;
+                Product checkProduct;
 
                 try {
 
@@ -149,6 +150,25 @@ public class App {
                 } catch (QueueException e) {
                     System.out.println(e.getMessage());
 
+                }
+
+            }
+
+            if (operator == 10) {
+
+                System.out.println("Processing order...");
+
+                try {
+
+                    for (int i = 0; i < shoppingCart.orderSize(); i++) {
+
+                        shoppingCart.processProduct();
+
+                    }
+                    
+                } catch (QueueException e) {
+                    
+                    System.out.println(e.getMessage());
                 }
 
             }
