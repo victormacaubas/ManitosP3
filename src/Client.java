@@ -4,19 +4,28 @@ public class Client extends Person implements Comparable<Client>{
 
     public boolean passwordCheck(String data) {
 
-        if (this.password.equalsIgnoreCase(data)) {
+        if (this.password.equals(data)) {
             return true;
         }
 
         return false;
     }
 
-    public Client(String id, String name) {
-        super(id, name);
+    public Client(String id, String name, String password) {
+        super(id,name);
+    }
+
+    public Client(String id) {
+        super(id);
     }
 
     public void setPassword(String data) {
         this.password = data;
+    }
+
+
+        public String getPassword() {
+        return password;
     }
 
     @Override
@@ -32,4 +41,6 @@ public class Client extends Person implements Comparable<Client>{
 
         return result;
     }
+
+
 }
