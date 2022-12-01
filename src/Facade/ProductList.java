@@ -1,6 +1,7 @@
 package Facade;
 import ADT.DoublyLinkedList;
 import ADT.DoublyNode;
+import Exceptions.ProductException;
 import Exceptions.ProductListException;
 import interfaces.Product;
 
@@ -13,7 +14,7 @@ public class ProductList {
         this.productStock = new DoublyLinkedList<>();
     }
 
-    public void registerProduct(Product data) {
+    public void registerProduct(Product data) throws ProductException {
 
         DoublyNode<Product> result = this.productStock.search(data);
 
@@ -52,7 +53,7 @@ public class ProductList {
 
     }
 
-    public void setPrice (String id, double price) {
+    public void setPrice (String id, double price) throws ProductException {
 
         Product aux = new Product(id);
         DoublyNode<Product> result = this.productStock.search(aux);
@@ -68,7 +69,7 @@ public class ProductList {
         }
     }
 
-    public void setStock (String id, int stock) {
+    public void setStock (String id, int stock) throws ProductException {
 
         Product aux = new Product(id);
         DoublyNode<Product> result = this.productStock.search(aux);
@@ -85,7 +86,7 @@ public class ProductList {
 
     }
 
-    public Product getProduct(String id) throws ProductListException {
+    public Product getProduct(String id) throws ProductListException, ProductException {
 
         Product checkOut;
         Product aux = new Product(id);

@@ -1,5 +1,8 @@
 package main;
+
 import java.util.Scanner;
+
+import Exceptions.ProductException;
 import Exceptions.ProductListException;
 import Exceptions.QueueException;
 import Facade.ClienteDataBase;
@@ -64,7 +67,6 @@ public class App {
 
                 tempClient = new Client(id, name, password);
                 clientAccounts.registerClient(tempClient);
-                
 
             }
 
@@ -96,14 +98,20 @@ public class App {
                 System.out.println("Please inform produt name:");
                 String productName = input.nextLine();
 
-
                 System.out.println("Please set a price");
                 double productPrice = input.nextDouble();
 
                 Product newProduct = new Product(productId, productName);
-                newProduct.setPrice(productPrice);
 
-                productDataBase.registerProduct(newProduct);
+                try {
+
+                    newProduct.setPrice(productPrice);
+                    productDataBase.registerProduct(newProduct);
+
+                } catch (ProductException e) {
+
+                    System.out.println(e.getMessage());
+                }
 
             }
 
@@ -129,19 +137,30 @@ public class App {
                 System.out.println("Enter new price");
                 double price = input.nextInt();
 
-                productDataBase.setPrice(productId, price);
+                try {
+
+                    productDataBase.setPrice(productId, price);
+                } catch (ProductException e) {
+                    System.out.println(e.getMessage());
+                }
 
             }
 
             if (operator == 7) {
+                try {
 
-                System.out.println("Input product id");
-                String productId = input.nextLine();
+                    System.out.println("Input product id");
+                    String productId = input.nextLine();
 
-                System.out.println("Enter new stock quantity");
-                int stock = input.nextInt();
+                    System.out.println("Enter new stock quantity");
+                    int stock = input.nextInt();
 
-                productDataBase.setStock(productId, stock);
+                    productDataBase.setStock(productId, stock);
+
+                } catch (Exception e) {
+
+                    System.out.println(e.getMessage());
+                }
 
             }
 
@@ -162,6 +181,8 @@ public class App {
                 } catch (QueueException e) {
                     System.out.println(e.getMessage());
 
+                } catch (ProductException ex) {
+                    System.out.println(ex.getMessage());
                 }
 
             }
@@ -180,7 +201,7 @@ public class App {
                 try {
 
                     shoppingCart.pay(new CreditCardStrategy(tempClient.getName(), cardnumber, cvv, dateExp));
-                    
+
                 } catch (QueueException e) {
 
                     System.out.println(e.getMessage());
@@ -199,7 +220,7 @@ public class App {
                 try {
 
                     shoppingCart.pay(new PayPalStrategy(email, passwordPay));
-                    
+
                 } catch (QueueException e) {
 
                     System.out.println(e.getMessage());

@@ -1,4 +1,7 @@
 package interfaces;
+
+import Exceptions.ProductException;
+
 public class Product implements Comparable<Product> {
     private String id;
     private String name;
@@ -29,11 +32,21 @@ public class Product implements Comparable<Product> {
         return this.id;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(double price) throws ProductException {
+        if (price <= 0) {
+
+            throw new ProductException("ERROR: Price must be higher than 0");
+        }
+
         this.price = price;
     }
 
-    public void setProductStock(int productStock) {
+    public void setProductStock(int productStock) throws ProductException {
+        if (price <= 0) {
+            
+            throw new ProductException("ERROR: Price must be higher than 0");
+        }
+        
         this.productStock = productStock;
     }
 
